@@ -27,6 +27,11 @@ $pages = array(
         "view" => "DeleteView",
         "controller" => "DeleteController"
     ),
+    "change" => array(
+        "model" => "ChangeModel",
+        "view" => "ChangeView",
+        "controller" => "ChangeController"
+    ),
     "create" => array(
         "model" => "CreateModel",
         "view" => "CreateView",

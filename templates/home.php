@@ -27,6 +27,7 @@ for ($i=0; $i < count($matelasArray); $i++) {
             <div class="left-side">
                 <p><?= $matelasArray[$i]['marque']?></p>
                 <p>Matelas <?= $matelasArray[$i]['name'] ?></p>
+                <a href="<?= "./change/" . $matelasArray[$i]['id'] ?>">Modifier</a>
             </div>
 
             <div class="right-side">
@@ -47,7 +48,6 @@ for ($i=0; $i < count($matelasArray); $i++) {
                 ?>
             </div>
         </div>
-
 
     
     </div>

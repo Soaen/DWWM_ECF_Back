@@ -3,3 +3,4 @@ RewriteEngine on
 
 RewriteRule ^create$ index.php?page=create
 RewriteRule ^delete$ index.php?page=delete
+RewriteRule ^change/([0-9]+)$ index.php?page=change&id=$1
