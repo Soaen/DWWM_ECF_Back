@@ -25,6 +25,9 @@ if(!empty($_POST)){
     if(!filter_var($img, FILTER_VALIDATE_URL)){
         $errors["img"] = "Le lien de l'image n'est pas valide";
     }
+    if(empty($name)){
+        $errors["name"] = "Le nom ne doit pas être vide";
+    }
 
     if(empty($errors)){
         $db = new PDO("mysql:host=". DB_HOSTNAME .";dbname=" . DB_DATABASE, "root", "root");
@@ -48,73 +51,83 @@ if(!empty($_POST)){
 <h1>Create</h1>
 
 
-
-<form action="" method="POST">
-
-<div class="marque-name">
+<div class="global-form-create">
 
 
-    <div>
-        <label for="marque">Marque:</label>
-        <select name="marque" id="marque">
-            <option value="EPEDA">Epeda</option>
-            <option value="DREAMWAY">Dreamway</option>
-            <option value="BULTEX">Bultex</option>
-            <option value="DORSOLINE">Dorsoline</option>
-            <option value="MEMORYLINE">MemoryLine</option>
-        </select>
+<form action="" method="POST" class="form-create">
+
+    <div class="marque-name">
+        <div class="label-input">
+            <label for="marque">Marque:</label>
+            <select name="marque" id="marque">
+                <option value="EPEDA">Epeda</option>
+                <option value="DREAMWAY">Dreamway</option>
+                <option value="BULTEX">Bultex</option>
+                <option value="DORSOLINE">Dorsoline</option>
+                <option value="MEMORYLINE">MemoryLine</option>
+            </select>
+        </div>
+
+        <div class="label-input">
+            <label for="name">Nom:</label>
+            <input type="text" placeholder="Nom du matelas" name="name" value="<?= isset($name) ? $name : ""?>">
+            <?php
+                    if(isset($errors['name'])){
+                        ?>
+                            <p class="error"><?= $errors["name"] ?></p>
+                        <?php
+                    }
+                ?>
+        </div>
     </div>
 
-    <div>
-        <label for="name">Nom:</label>
-        <input type="text" placeholder="Nom du matelas" name="name" value="<?= isset($name) ? $name : ""?>">
-        <?php
-                if(isset($errors['name'])){
-                    ?>
-                        <p class="error"><?= $errors["name"] ?></p>
-                    <?php
-                }
-            ?>
-    </div>
 
 
-</div>
-
-
-
-    <div>
+    <div class="label-input">
         <label for="img">Image:</label>
         <input type="text" placeholder="Lien d'une image du matelas" name="img"  value="<?= isset($img) ? $img : ""?>">
-    </div>
-
-    <div>
-        <label for="size">Taille:</label>
-        <select name="size" id="size">
-            <option value="90x190">90x190</option>
-            <option value="140x190">140x190</option>
-            <option value="160x200">160x200</option>
-            <option value="180x200">180x200</option>
-            <option value="200x200">200x200</option>
-        </select>
-    </div>
-
-    <div>
-        <label for="price">Prix:</label>
-        <input type="number" placeholder="Prix du matelas" id="price" name="price" value="<?= isset($price) ? $price : ""?>">
         <?php
-                if(isset($errors['price'])){
-                    ?>
-                        <p class="error"><?= $errors["price"] ?></p>
-                    <?php
-                }
-            ?>
+                    if(isset($errors['img'])){
+                        ?>
+                            <p class="error"><?= $errors["img"] ?></p>
+                        <?php
+                    }
+                ?>
+    </div>
+            
+    <div>
+        <div class="label-input">
+            <label for="size">Taille:</label>
+            <select name="size" id="size">
+                <option value="90x190">90x190</option>
+                <option value="140x190">140x190</option>
+                <option value="160x200">160x200</option>
+                <option value="180x200">180x200</option>
+                <option value="200x200">200x200</option>
+            </select>
+        </div>
+
+        <div class="label-input">
+            <label for="price">Prix:</label>
+            <input type="number" placeholder="Prix du matelas" id="price" name="price" value="<?= isset($price) ? $price : ""?>">
+            <?php
+                    if(isset($errors['price'])){
+                        ?>
+                            <p class="error"><?= $errors["price"] ?></p>
+                        <?php
+                    }
+                ?>
+        </div>
     </div>
 
+    
 
     <div>
-        <label for="solde">Solde:</label>
-        <input type="number" placeholder="Solde du matelas" value="0" id="solde" name="solde" value="<?= isset($solde) ? $solde : ""?>">
-        <p class="red">Si aucun solde, mettre 0</p>
+        <div class="label-input">
+            <label for="solde">Solde:</label>
+            <input type="number" placeholder="Solde du matelas" value="0" id="solde" name="solde" value="<?= isset($solde) ? $solde : ""?>">
+        </div>
+        <p class="red">Si aucun solde en cours, mettre 0</p>
         <?php
                 if(isset($errors['solde'])){
                     ?>
@@ -124,10 +137,10 @@ if(!empty($_POST)){
             ?>
     </div>
 
-    <input type="submit" value="Envoyer">
+    <input type="submit" value="Envoyer" class="submit-btn">
 
 </form>
-
+</div>
 
 <?php
 

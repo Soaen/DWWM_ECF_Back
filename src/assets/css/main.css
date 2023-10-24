@@ -93,6 +93,9 @@ nav .navbar .logo-navbar img {
 .marque-name {
   display: flex;
 }
+.marque-name .label-input {
+  margin-right: 20px;
+}
 
 .delete-container {
   display: flex;
@@ -109,6 +112,45 @@ nav .navbar .logo-navbar img {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+}
+
+.form-create {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: grey;
+  padding: 20px;
+  width: 60%;
+  border-radius: 25px;
+  row-gap: 20px;
+}
+.form-create .submit-btn {
+  width: 25%;
+}
+.form-create input, .form-create select {
+  height: 30px;
+  width: 200px;
+  border-radius: 10px;
+  border: solid 2px black;
+  text-align: center;
+}
+
+.label-input {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.global-form-create {
+  display: flex;
+  justify-content: center;
+}
+
+.error {
+  color: red;
+  margin: 0;
 }
 
 /*# sourceMappingURL=main.css.map */

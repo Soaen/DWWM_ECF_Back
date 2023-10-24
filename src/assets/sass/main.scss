@@ -95,6 +95,9 @@ nav .navbar{
 
 .marque-name{
     display: flex;
+    .label-input{
+        margin-right: 20px;
+    }
 }
 
 .delete-container{
@@ -112,4 +115,43 @@ nav .navbar{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+}
+
+.form-create{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: grey;
+    padding: 20px;
+    width: 60%;
+    border-radius: 25px;
+    row-gap: 20px;
+    .submit-btn{
+        width: 25%;
+    }
+    input, select{
+        height: 30px;
+        width: 200px;
+        border-radius: 10px;
+        border: solid  2px black;
+        text-align: center;
+    }
+}
+.label-input{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.global-form-create{
+    display: flex;
+    justify-content: center;
+}
+
+
+.error{
+    color: red;
+    margin: 0;
 }
