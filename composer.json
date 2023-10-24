@@ -1,0 +1,6 @@
+{
+    "name": "sylvain/dwwm_ecf_back",
+    "require": {
+        "phpmailer/phpmailer": "^6.8"
+    }
+}

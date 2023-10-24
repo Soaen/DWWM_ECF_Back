@@ -1,0 +1,5 @@
+RewriteEngine on 
+
+
+RewriteRule ^create$ index.php?page=create
+RewriteRule ^delete$ index.php?page=delete

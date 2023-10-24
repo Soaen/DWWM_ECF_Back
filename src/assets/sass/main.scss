@@ -1,0 +1,36 @@
+.matelas-global-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .matelas-container{
+        flex-basis: 30%;
+        width: 30%;
+        margin: 10px;
+        img{
+            width: 100%;
+            overflow: hidden;
+            object-fit: cover;
+            height: 70%;
+        }
+        .matelas-text-container{
+            display: flex;
+            .left-side, .right-side{
+                width: 50%;
+            }
+            .right-side{
+                text-align: end;
+                .nosolde{
+                    color: red;
+                    text-decoration: line-through;
+                }
+            }
+        }
+    }
+}
+
+
+.red{
+    color: red;
+    margin: 0;
+    font-size: 12px;
+}

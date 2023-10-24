@@ -1,0 +1,37 @@
+.matelas-global-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.matelas-global-container .matelas-container {
+  flex-basis: 30%;
+  width: 30%;
+  margin: 10px;
+}
+.matelas-global-container .matelas-container img {
+  width: 100%;
+  overflow: hidden;
+  object-fit: cover;
+  height: 70%;
+}
+.matelas-global-container .matelas-container .matelas-text-container {
+  display: flex;
+}
+.matelas-global-container .matelas-container .matelas-text-container .left-side, .matelas-global-container .matelas-container .matelas-text-container .right-side {
+  width: 50%;
+}
+.matelas-global-container .matelas-container .matelas-text-container .right-side {
+  text-align: end;
+}
+.matelas-global-container .matelas-container .matelas-text-container .right-side .nosolde {
+  color: red;
+  text-decoration: line-through;
+}
+
+.red {
+  color: red;
+  margin: 0;
+  font-size: 12px;
+}
+
+/*# sourceMappingURL=main.css.map */
