@@ -1,6 +1,10 @@
+<link rel="stylesheet" href="style.css">
 <?php
 
 include('../templates/header.php');
+
+
+$isDeleted = false;
 
 $db = new PDO("mysql:host=" . DB_HOSTNAME . ";dbname=" . DB_DATABASE, "root", "root");
 
@@ -21,35 +25,55 @@ if(!empty($_POST)){
     if(empty($errors)){
         $db = new PDO("mysql:host=". DB_HOSTNAME .";dbname=" . DB_DATABASE, "root", "root");
 
+
         $query = $db->prepare("DELETE FROM matelas WHERE id = :id");
         $query ->bindParam(":id", $id);
 
         if($query->execute()){
-            header("Location: /dwwm_ecf_back/public");
+            header("Location: /dwwm_ecf_back/public/");
         }
     }
 }
 ?>
+    <?php 
+    if($isDeleted){
+?>
 
-<form action="" method="post">
+<p>Le matela n°<?= $id ?> à bien été supprimer.</p>
 
-    <label for="id">Choisissez le matelas que vous voulez supprimer:</label>
-    <select name="id" id="id">
-        <option disabled selected>Matela a supprimer</option>
-<?php 
-    for ($i=0; $i < count($matelasArray); $i++) { 
+<?php
+    }
     ?>
+    <h2 for="id" class="delete-label">Choisissez le matelas que vous voulez supprimer:</h2>
 
-        <option value="<?= $matelasArray[$i]['id']?>"><?= $matelasArray[$i]['marque']?> - <?= $matelasArray[$i]['name']?></option>
+<div class="delete-global-container">
 
     <?php
-}
+
+for ($i=0; $i < count($matelasArray); $i++) { 
 ?>
-    </select>
+<form action="" method="post" class="form-delete">
+    
+    <div class="delete-container">
+        <img src="<?= $matelasArray[$i]['img']?>" alt="Photo du matela" srcset="">
+        <p><?= $matelasArray[$i]['marque']?> <?= $matelasArray[$i]['name'] ?></p>
+        <input type="hidden" name="id" value="<?= $matelasArray[$i]['id'] ?>">  
+        <input type="submit" value="Supprimer ce matelas"></input>
 
-    <input type="submit" value="Supprimer">
-
+    </div>
 </form>
+
+
+    <?php
+}   
+
+?>
+
+</div>
+
+
+
+
 
 
 

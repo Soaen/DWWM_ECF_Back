@@ -1,6 +1,6 @@
 <?php 
 
-include('../templates/header.php');
+include('../templates/header2.php');
 
 if(isset($_GET['id'])){
     $id = trim(strip_tags($_GET['id']));

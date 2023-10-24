@@ -38,7 +38,7 @@ if(!empty($_POST)){
         $query ->bindParam(":img", $img);
 
         if($query->execute()){
-            header("Location: /public");
+            
         }
     }
 }
@@ -50,6 +50,9 @@ if(!empty($_POST)){
 
 
 <form action="" method="POST">
+
+<div class="marque-name">
+
 
     <div>
         <label for="marque">Marque:</label>
@@ -73,6 +76,11 @@ if(!empty($_POST)){
                 }
             ?>
     </div>
+
+
+</div>
+
+
 
     <div>
         <label for="img">Image:</label>

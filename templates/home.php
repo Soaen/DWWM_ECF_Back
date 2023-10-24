@@ -14,6 +14,7 @@ while ($matela = $query->fetch()) {
 }
 
 ?>
+    <h1>Liste des matelas</h1>
 
 <div class="matelas-global-container">
 
